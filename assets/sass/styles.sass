@@ -1,0 +1,103 @@
+@import 'https://fonts.googleapis.com/css?family=Unica+One|Roboto'
+// - - - - - - Variables - - - - - - //
+$main: #d8e9ef
+$highlightRed: #e85a71
+$highlightBlue: #4ea1d3
+$background: #454552
+$white: #fff
+
+// - - - - - - Global Styles - - - - - - //
+body
+  background-color: $background
+  padding-top: 20px
+  font-family: 'Roboto', sans-serif
+  margin: 0
+
+
+h1
+  font-family: 'Unica One', cursive
+  color: $highlightBlue
+  text-align: center
+  font-size: 6rem
+  font-weight: 400
+  letter-spacing: -5px
+  @media screen and (max-width: 800px)
+    font-size: 4rem
+
+.surround
+  width: 800px
+  max-width: 90%
+  margin: 0 auto
+
+
+.table
+  position: relative
+  display: table
+  background-color: $main
+  border-radius: 60px 60px 0 0
+  padding: 120px 45px 30px
+  margin: 120px auto
+  @media screen and (max-width: 800px)
+    border-radius: 50px 50px 0 0
+    padding: 85px 30px 15px
+    margin: 100px auto
+
+  img
+    position: absolute
+    width: 140px
+    top: 0
+    left: 50%
+    transform: translate(-50%, -45%)
+    z-index: 2
+    margin: 0 auto
+    @media screen and (max-width: 800px)
+      width: 100px
+
+
+  table
+    border-spacing: 6px
+    td
+      width: 4px
+      height: 4px
+      background-color: $white
+      background-color: $background
+      border-radius: 50%
+      opacity: 0.15
+      &.lived
+        opacity: 0.8
+
+      &.current
+        opacity: 1
+        background-color: $highlightRed
+        box-shadow: 0 0 0 2px $highlightRed
+        animation: blinker 1.5s linear infinite
+        @keyframes blinker
+          50%
+            box-shadow: 0 0 0 0px $highlightRed
+
+    @media screen and (max-width: 800px)
+      border-spacing: 3px
+      td
+        width: 2px
+        height: 2px
+
+  .footer
+    position: absolute
+    width: 100%
+    bottom: 1px
+    left: 0px
+    transform: translate(0, 100%)
+    box-sizing: border-box
+    padding: 10px 30px
+    text-align: center
+    font-size: .9rem
+    color: $main
+    background-color: $highlightBlue
+    @media screen and (max-width: 800px)
+      font-size: .7rem
+footer
+  margin: 30px 0
+  p
+    color: $main
+    text-align: center
+    font-size: .7rem

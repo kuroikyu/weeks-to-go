@@ -1,0 +1,142 @@
+@import 'https://fonts.googleapis.com/css?family=Unica+One|Roboto';
+body {
+  background-color: #454552;
+  padding-top: 20px;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+
+h1 {
+  font-family: 'Unica One', cursive;
+  color: #4ea1d3;
+  text-align: center;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: -5px;
+}
+
+@media screen and (max-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+}
+
+.surround {
+  width: 800px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.table {
+  position: relative;
+  display: table;
+  background-color: #d8e9ef;
+  border-radius: 60px 60px 0 0;
+  padding: 120px 45px 30px;
+  margin: 120px auto;
+}
+
+@media screen and (max-width: 800px) {
+  .table {
+    border-radius: 50px 50px 0 0;
+    padding: 85px 30px 15px;
+    margin: 100px auto;
+  }
+}
+
+.table img {
+  position: absolute;
+  width: 140px;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, -45%);
+      -ms-transform: translate(-50%, -45%);
+          transform: translate(-50%, -45%);
+  z-index: 2;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 800px) {
+  .table img {
+    width: 100px;
+  }
+}
+
+.table table {
+  border-spacing: 6px;
+}
+
+.table table td {
+  width: 4px;
+  height: 4px;
+  background-color: #fff;
+  background-color: #454552;
+  border-radius: 50%;
+  opacity: 0.15;
+}
+
+.table table td.lived {
+  opacity: 0.8;
+}
+
+.table table td.current {
+  opacity: 1;
+  background-color: #e85a71;
+  box-shadow: 0 0 0 2px #e85a71;
+  -webkit-animation: blinker 1.5s linear infinite;
+          animation: blinker 1.5s linear infinite;
+}
+
+@-webkit-keyframes blinker {
+  50% {
+    box-shadow: 0 0 0 0px #e85a71;
+  }
+}
+
+@keyframes blinker {
+  50% {
+    box-shadow: 0 0 0 0px #e85a71;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .table table {
+    border-spacing: 3px;
+  }
+  .table table td {
+    width: 2px;
+    height: 2px;
+  }
+}
+
+.table .footer {
+  position: absolute;
+  width: 100%;
+  bottom: 1px;
+  left: 0px;
+  -webkit-transform: translate(0, 100%);
+      -ms-transform: translate(0, 100%);
+          transform: translate(0, 100%);
+  box-sizing: border-box;
+  padding: 10px 30px;
+  text-align: center;
+  font-size: .9rem;
+  color: #d8e9ef;
+  background-color: #4ea1d3;
+}
+
+@media screen and (max-width: 800px) {
+  .table .footer {
+    font-size: .7rem;
+  }
+}
+
+footer {
+  margin: 30px 0;
+}
+
+footer p {
+  color: #d8e9ef;
+  text-align: center;
+  font-size: .7rem;
+}

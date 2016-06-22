@@ -1,0 +1,64 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(name="theme-color" content="#454552")
+    meta(name="description" content="Weekly calendar")
+    meta(name="author" content="Kuroi Kyu")
+    meta(name="keywords" content="Calendar, Death, Weeks, Weekly")
+    title= "Weeks to go | Weekly calendar"
+    //- // Facebook's share info
+    //- meta(property="og:site_name" content="kuroikyu")
+    //- meta(property="og:url" content="http://www.kuroikyu.com")
+    //- meta(property="og:image" content="http://www.kuroikyu.com/assets/img/landing.jpg")
+    link(rel="icon" href="assets/img/skull-icon.png")
+    link(rel="stylesheet" type="text/css" href="assets/css/styles.css")
+  body
+    mixin rowLived
+      - var n = 0
+      while n < 52
+        td.lived
+        - n++ 
+    mixin row
+      - var n = 0
+      while n < 52
+        td
+        - n++ 
+
+    .surround
+      h1 Weeks to go
+      .table
+        table
+          
+          img(src="assets/img/skull.svg", alt="")
+        
+          tbody
+          - var r = 0
+          while r < 27
+            tr
+              +rowLived
+            - r++
+
+          tr
+            td.lived
+            td.lived
+            td.lived
+            td.current
+
+            - var r = 0
+            while r < 48
+              td
+              - r++
+
+          - var r = 0
+          while r < 80-27
+            tr
+              +row
+            - r++
+      
+        .footer
+          p Each circle represents a week of my life; estimated lifespan averaged at 80 years
+          
+      footer
+        p Kuroi Kyu &copy 2016
