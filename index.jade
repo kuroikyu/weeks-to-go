@@ -34,28 +34,28 @@ html(lang="en")
           img(src="assets/img/skull.svg", alt="")
         
           tbody
-          - var r = 0
-          while r < 27
-            tr
-              +rowLived
-            - r++
-
-          tr
-            td.lived
-            td.lived
-            td.lived
-            td.current
-
             - var r = 0
-            while r < 48
-              td
+            while r < 27
+              tr
+                +rowLived
               - r++
 
-          - var r = 0
-          while r < 80-27
             tr
-              +row
-            - r++
+              td.lived
+              td.lived
+              td.lived
+              td.current
+
+              - var r = 0
+              while r < 48
+                td
+                - r++
+
+            - var r = 0
+            while r < 80-27
+              tr
+                +row
+              - r++
       
         .footer
           p Each circle represents a week of my life; estimated lifespan averaged at 80 years
