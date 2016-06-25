@@ -1,41 +1,38 @@
-// $(function(){
-//
-// });
+$(function() {
+    for (var fYear = 1; fYear < years; fYear++) {
+        for (var fDay = 1; fDay <= 52; fDay++) {
+            incrementDelay();
+            doSetTimeout(fYear, fDay, delay);
+        }
+    }
+
+    for (var fDay = 1; fDay <= remainingWeeks; fDay++) {
+        incrementDelay();
+        doSetTimeout(fYear, fDay, delay);
+
+        if (fDay == remainingWeeks) {
+            incrementDelay();
+            setTimeout(function() {
+                $('tbody').children('tr:nth-child(' + fYear + ')').children('td:nth-child(' + fDay + ')').addClass('current');
+            }, delay);
+        }
+    }
+
+});
 
 var dateToday = new Date();
-var dateBorn = new Date("2015-05-29");
+var dateBorn = new Date("1989-05-29");
 var totalWeeks = Math.round((dateToday - dateBorn) / 604800000);
 var years = Math.floor(totalWeeks / 52);
 var remainingWeeks = totalWeeks % 52;
 var delay = 0;
 
-console.log(totalWeeks);
-console.log(years);
-console.log(remainingWeeks);
-
-
-$('tbody').children('tr:nth-child(' + years + ')').children('td:nth-child(' + remainingWeeks + ')').addClass('current')
-
-for (var fYear = 1; fYear < years - 1; fYear++) {
-  console.log('delay ' + delay);
-  
-    for (var fDay = 1; fDay <= 52; fDay++) {
-        delay += 1000;
-        console.log('delay ' + delay);
-        // setTimeout(setLived(fYear, fDay), delay);
-        setTimeout(console.log(1), delay);
-
-    }
-}
-function setLived(row, column) {
-  $('tbody').children('tr:nth-child(' + row + ')').children('td:nth-child(' + column + ')').addClass('lived')
+function incrementDelay() {
+    delay += 5;
 }
 
-setLived(55, 12);
-
-
-var explode = function(){
-  alert("Boom!");
-};
-// setTimeout(explode, 2000);
-setTimeout(console.log('Test'), 1000);
+function doSetTimeout(row, column, delay) {
+    setTimeout(function() {
+        $('tbody').children('tr:nth-child(' + row + ')').children('td:nth-child(' + column + ')').addClass('lived').toggleClass('current').delay(20).toggleClass('current');
+    }, delay);
+}
