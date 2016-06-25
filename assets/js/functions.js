@@ -70,5 +70,5 @@ function doSetTimeout(row, column, delay) {
     // Removing the current class a few miliseconds after will make it animate as if it was a trail
     setTimeout(function() {
         $('tbody').children('tr:nth-child(' + row + ')').children('td:nth-child(' + column + ')').removeClass('current');
-    }, delay + 100);
+    }, delay + 75);
 }
