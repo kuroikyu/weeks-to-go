@@ -1,4 +1,3 @@
-@import 'https://fonts.googleapis.com/css?family=Unica+One|Roboto';
 body {
   background-color: #454552;
   padding-top: 20px;
@@ -79,7 +78,7 @@ h1 {
   opacity: 0.8;
 }
 
-.table table td.current {
+.table table td.current, .table table td.trail {
   opacity: 1;
   background-color: #e85a71;
   box-shadow: 0 0 0 2px #e85a71;
