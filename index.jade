@@ -18,7 +18,7 @@ html(lang="en")
     mixin rowLived
       - var n = 0
       while n < 52
-        td.lived
+        td
         - n++ 
     mixin row
       - var n = 0
@@ -44,7 +44,7 @@ html(lang="en")
               td.lived
               td.lived
               td.lived
-              td.current
+              td.lived
 
               - var r = 0
               while r < 48
@@ -62,3 +62,6 @@ html(lang="en")
           
       footer
         p Kuroi Kyu &copy 2016
+  
+    script(type="application/javascript", src="assets/js/jquery-3.0.0.min.js")
+    script(type="application/javascript", src="assets/js/functions.js")
