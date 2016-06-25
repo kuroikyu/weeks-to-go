@@ -9,38 +9,41 @@ html(lang="en")
     meta(name="keywords" content="Calendar, Death, Weeks, Weekly")
     title= "Weeks to go | Weekly calendar"
     //- // Facebook's share info
-    //- meta(property="og:site_name" content="kuroikyu")
-    //- meta(property="og:url" content="http://www.kuroikyu.com")
-    //- meta(property="og:image" content="http://www.kuroikyu.com/assets/img/landing.jpg")
+    meta(property="og:site_name" content="Weeks to go")
+    meta(property="og:url" content="http://www.kuroikyu.com")
+    meta(property="og:image" content="http://www.kuroikyu.com/assets/img/skull-icon.png")
+
     link(rel="icon" href="assets/img/skull-icon.png")
+    link(href="https://fonts.googleapis.com/css?family=Roboto|Unica+One" rel="stylesheet")
     link(rel="stylesheet" type="text/css" href="assets/css/styles.css")
+    
   body
 
     mixin row
-      - var n = 0
-      while n < 52
-        td
+      - var n = 1
+      while n <= 52
+        td(class="col" + n)
         - n++ 
 
     .surround
       h1 Weeks to go
       .table
         table
-          
+
           img(src="assets/img/skull.svg", alt="")
-        
+
           tbody
-            - var r = 0
-            while r < 80
-              tr
+            - var r = 1
+            while r <= 80
+              tr(id= 'row' + r)
                 +row
               - r++
-      
+
         .footer
           p Each circle represents a week of my life; estimated lifespan averaged at 80 years
-          
+
       footer
         p Kuroi Kyu &copy 2016
-  
+
     script(type="application/javascript", src="assets/js/jquery-3.0.0.min.js")
     script(type="application/javascript", src="assets/js/functions.js")
