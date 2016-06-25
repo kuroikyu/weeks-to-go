@@ -15,11 +15,7 @@ html(lang="en")
     link(rel="icon" href="assets/img/skull-icon.png")
     link(rel="stylesheet" type="text/css" href="assets/css/styles.css")
   body
-    mixin rowLived
-      - var n = 0
-      while n < 52
-        td.lived
-        - n++ 
+
     mixin row
       - var n = 0
       while n < 52
@@ -35,24 +31,7 @@ html(lang="en")
         
           tbody
             - var r = 0
-            while r < 27
-              tr
-                +rowLived
-              - r++
-
-            tr
-              td.lived
-              td.lived
-              td.lived
-              td.current
-
-              - var r = 0
-              while r < 48
-                td
-                - r++
-
-            - var r = 0
-            while r < 80-27
+            while r < 80
               tr
                 +row
               - r++
@@ -62,3 +41,6 @@ html(lang="en")
           
       footer
         p Kuroi Kyu &copy 2016
+  
+    script(type="application/javascript", src="assets/js/jquery-3.0.0.min.js")
+    script(type="application/javascript", src="assets/js/functions.js")
