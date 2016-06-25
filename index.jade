@@ -16,11 +16,11 @@ html(lang="en")
     link(rel="icon" href="assets/img/skull-icon.png")
     link(rel="stylesheet" type="text/css" href="assets/css/styles.css")
   body
-
+     
     mixin row
-      - var n = 0
-      while n < 52
-        td
+      - var n = 1
+      while n <= 52
+        td(class="col" + n)
         - n++ 
 
     .surround
@@ -31,9 +31,9 @@ html(lang="en")
           img(src="assets/img/skull.svg", alt="")
         
           tbody
-            - var r = 0
-            while r < 80
-              tr
+            - var r = 1
+            while r <= 80
+              tr(id= 'row' + r)
                 +row
               - r++
       
